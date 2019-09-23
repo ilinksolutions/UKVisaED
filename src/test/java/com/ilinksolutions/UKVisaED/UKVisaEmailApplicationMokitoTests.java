@@ -1,4 +1,4 @@
-package com.ilinksolutions.UKVisaEmail;
+package com.ilinksolutions.UKVisaED;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,8 +8,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ilinksolutions.UKVisaEmail.UKVisaEmailApplication;
-import com.ilinksolutions.UKVisaEmail.domains.UKVisaMessage;
+import com.ilinksolutions.UKVisaED.UKVisaEmailApplication;
+import com.ilinksolutions.UKVisaED.domains.UKVisaMessage;
 
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.beans.factory.annotation.Autowired;

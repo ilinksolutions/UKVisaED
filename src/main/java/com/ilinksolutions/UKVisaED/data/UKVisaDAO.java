@@ -1,8 +1,8 @@
-package com.ilinksolutions.UKVisaEmail.data;
+package com.ilinksolutions.UKVisaED.data;
 
 import java.util.List;
 
-import com.ilinksolutions.UKVisaEmail.domains.UKVisaMessage;
+import com.ilinksolutions.UKVisaED.domains.UKVisaMessage;
 
 /**
  *

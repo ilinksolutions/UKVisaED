@@ -1,4 +1,4 @@
-package com.ilinksolutions.UKVisaEmail.data.impl;
+package com.ilinksolutions.UKVisaED.data.impl;
 
 import java.sql.*;
 import java.util.List;
@@ -9,8 +9,8 @@ import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ilinksolutions.UKVisaEmail.data.UKVisaDAO;
-import com.ilinksolutions.UKVisaEmail.domains.UKVisaMessage;
+import com.ilinksolutions.UKVisaED.data.UKVisaDAO;
+import com.ilinksolutions.UKVisaED.domains.UKVisaMessage;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;

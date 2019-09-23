@@ -1,4 +1,4 @@
-package com.ilinksolutions.UKVisaEmail;
+package com.ilinksolutions.UKVisaED;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

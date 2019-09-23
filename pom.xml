@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ilinksolutions</groupId>
-	<artifactId>UKVisaEmail</artifactId>
+	<artifactId>UKVisaED</artifactId>
 	<packaging>war</packaging>
-	<name>UKVisaEmail</name>
+	<name>UKVisaED</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -48,6 +48,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+		    <version>2.9.2</version>
+		    <scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger-ui</artifactId>
+		    <version>2.9.2</version>
+		    <scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -56,12 +69,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<finalName>UKVisaEmail</finalName>
+					<finalName>UKVisaED</finalName>
 					<modules>
 						<warModule>
 							<groupId>com.ilinksolutions</groupId>
-							<artifactId>UKVisaEmail</artifactId>
-							<bundleFileName>UKVisaEmail.war</bundleFileName>
+							<artifactId>UKVisaED</artifactId>
+							<bundleFileName>UKVisaED.war</bundleFileName>
 						</warModule>
 					</modules>
 				</configuration>

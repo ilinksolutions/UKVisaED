@@ -1,4 +1,4 @@
-package com.ilinksolutions.UKVisaEmail.utils;
+package com.ilinksolutions.UKVisaED.bservices;
 
 import java.security.spec.KeySpec;
 import java.util.Base64;
@@ -13,13 +13,18 @@ import javax.crypto.spec.SecretKeySpec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class AES256Manager
+/**
+ *
+ */
+public class UKVisaEDService
 {
-	private static Logger logger = LoggerFactory.getLogger(AES256Manager.class);
 	
+	private static Logger logger = LoggerFactory.getLogger(UKVisaEDService.class);
+
 	private static String secretKey = "iLink0!0!kniLi";
 	private static String salt = "0!kniLiiLink0!";
 	
+
 	public static String decrypt(String strToDecrypt, String secret) {
 	    try
 	    {
@@ -66,21 +71,23 @@ public class AES256Manager
 	
 	public static String encryptMessage(String message)
 	{
-		logger.info("AES256Manager: encryptMessage: Begin.");
-	    String encryptedString = AES256Manager.encrypt(message, secretKey);
-	    logger.info("AES256Manager: encryptMessage: message: " + message);
-	    logger.info("AES256Manager: encryptMessage: message: " + encryptedString);
-	    logger.info("AES256Manager: encryptMessage: End.");
+		logger.info("UKVisaEDService: encryptMessage: Begin.");
+	    String encryptedString = UKVisaEDService.encrypt(message, secretKey);
+	    logger.info("UKVisaEDService: encryptMessage: message: " + message);
+	    logger.info("UKVisaEDService: encryptMessage: message: " + encryptedString);
+	    logger.info("UKVisaEDService: encryptMessage: End.");
 	    return encryptedString;
 	}
 	
 	public static String decryptMessage(String message)
 	{
-		logger.info("AES256Manager: decryptMessage: Begin.");
-	    String decryptedString = AES256Manager.decrypt(message, secretKey);
-	    logger.info("AES256Manager: decryptMessage: message: " + message);
-	    logger.info("AES256Manager: decryptMessage: message: " + decryptedString);
-	    logger.info("AES256Manager: decryptMessage: End.");
+		logger.info("UKVisaEDService: decryptMessage: Begin.");
+	    String decryptedString = UKVisaEDService.decrypt(message, secretKey);
+	    logger.info("UKVisaEDService: decryptMessage: message: " + message);
+	    logger.info("UKVisaEDService: decryptMessage: message: " + decryptedString);
+	    logger.info("UKVisaEDService: decryptMessage: End.");
 	    return decryptedString;
 	}
+	
+
 }

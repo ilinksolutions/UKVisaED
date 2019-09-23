@@ -1,4 +1,4 @@
-package com.ilinksolutions.UKVisaEmail;
+package com.ilinksolutions.UKVisaED;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

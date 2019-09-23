@@ -1,4 +1,4 @@
-package com.ilinksolutions.UKVisaEmail;
+package com.ilinksolutions.UKVisaED;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

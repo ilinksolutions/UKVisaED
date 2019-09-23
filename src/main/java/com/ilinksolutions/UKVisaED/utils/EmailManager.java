@@ -1,4 +1,4 @@
-package com.ilinksolutions.UKVisaEmail.utils;
+package com.ilinksolutions.UKVisaED.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
