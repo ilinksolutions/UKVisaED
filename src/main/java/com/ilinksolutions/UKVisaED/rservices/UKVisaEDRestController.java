@@ -34,7 +34,7 @@ public class UKVisaEDRestController {
 					@ApiResponse(code = 200, message = "Successfully decrypted the message."),
 			}
 	)
-	@PutMapping("/decryptmsg/{encryptedMessage}")
+	@PostMapping("/decryptmsg/{encryptedMessage}")
 	public ResponseEntity<String> decryptMessage(@PathVariable String encryptedMessage)
 	{
 		logger.info("UKVisaEDRestController: decryptMessage: Begin!");
