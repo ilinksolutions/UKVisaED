@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,7 +34,7 @@ public class UKVisaEDRestController {
 					@ApiResponse(code = 200, message = "Successfully decrypted the message."),
 			}
 	)
-	@PostMapping("/decryptmsg/{encryptedMessage}")
+	@PutMapping("/decryptmsg/{encryptedMessage}")
 	public ResponseEntity<String> decryptMessage(@PathVariable String encryptedMessage)
 	{
 		logger.info("UKVisaEDRestController: decryptMessage: Begin!");
@@ -48,9 +49,9 @@ public class UKVisaEDRestController {
 //			String decryptedMessage = UKVisaEDService.decryptMessage(messageString);
 			
 			String decryptedMessage = UKVisaEDService.decryptMessage(encryptedMessage);
-			
 			// set response as the decrypted message
-			decryptResponse = decryptedMessage;		
+			decryptResponse = decryptedMessage;
+			
 		} catch (Exception e) {
 			throw new USCISException(COULD_NOT_DECRYPT_MESSAGE, ErrorCode.DECRYPT_ERROR_CODE);
 		}
