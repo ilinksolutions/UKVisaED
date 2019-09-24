@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@Api(value = "UK Visa ED Rest Test API", tags = { "UK Visa APIs" })
+@Api(value = "UK Visa ED Rest Test API", tags = { "UK Visa Encrypt/Decrypt Endpoints" })
 public class UKVisaEDRestController {
 	
 	private static final String COULD_NOT_DECRYPT_MESSAGE = "Could not decrypt message!";
@@ -29,10 +30,10 @@ public class UKVisaEDRestController {
 	@ApiOperation(value = "Returns decrypted message on success.")
 	@ApiResponses(
 			value={
-					@ApiResponse(code = 200, message = "Successfully decrypted message."),
+					@ApiResponse(code = 200, message = "Successfully decrypted the message."),
 			}
 	)
-	@GetMapping("/decryptmsg")
+	@PostMapping("/decryptmsg")
 	public ResponseEntity<String> decryptMessage(@RequestBody UKVisaMessage message)
 	{
 		logger.info("UKVisaEDRestController: decryptMessage: Begin!");
@@ -53,15 +54,14 @@ public class UKVisaEDRestController {
 		return ResponseEntity.ok(decryptResponse);
 	}
 	
-	
-	
+
 	@ApiOperation(value = "Returns encrypted message on success.")
 	@ApiResponses(
 			value={
-					@ApiResponse(code = 200, message = "Successfully encrypted message."),
+					@ApiResponse(code = 200, message = "Successfully encrypted the message."),
 			}
 	)
-	@GetMapping("/encryptmsg")
+	@PostMapping("/encryptmsg")
 	public ResponseEntity<String> encryptMessage(@RequestBody UKVisaMessage message)
 	{
 		logger.info("UKVisaEDRestController: encryptMessage: Begin!");
