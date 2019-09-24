@@ -8,7 +8,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ilinksolutions.UKVisaED.UKVisaEmailApplication;
+import com.ilinksolutions.UKVisaED.UKVisaEDApplication;
 import com.ilinksolutions.UKVisaED.domains.UKVisaMessage;
 
 import org.springframework.test.context.junit4.SpringRunner;
@@ -16,8 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(UKVisaEmailApplication.class)
-public class UKVisaEmailApplicationMokitoTests
+@WebMvcTest(UKVisaEDApplication.class)
+public class UKVisaEDApplicationMokitoTests
 {
 	@Autowired
 	private MockMvc mvc;

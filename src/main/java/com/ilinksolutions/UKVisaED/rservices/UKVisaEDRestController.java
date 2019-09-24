@@ -3,7 +3,7 @@ package com.ilinksolutions.UKVisaED.rservices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,17 +34,21 @@ public class UKVisaEDRestController {
 			}
 	)
 	@PostMapping("/decryptmsg")
-	public ResponseEntity<String> decryptMessage(@RequestBody UKVisaMessage message)
+	public ResponseEntity<String> decryptMessage(@PathVariable String encryptedMessage)
 	{
 		logger.info("UKVisaEDRestController: decryptMessage: Begin!");
-		logger.info("UKVisaEDRestController: decryptMessage: Path Variable: " + message.toString());
+		
+//		logger.info("UKVisaEDRestController: decryptMessage: Path Variable: " + message.toString());
 		String decryptResponse = null;
 		try {
-			String messageString = "{\"id\": " + message.getId() + "," + "\"firstName\": \"" + message.getFirstName()
-			+ "\"," + "\"lastName\": \"" + message.getLastName() + "\"," + "\"contactNo\": \""
-			+ message.getContactNo() + "\"," + "\"email\": \"" + message.getEmail() + "\"}";
-			// attempt to decrypt the message
-			String decryptedMessage = UKVisaEDService.decryptMessage(messageString);
+//			String messageString = "{\"id\": " + message.getId() + "," + "\"firstName\": \"" + message.getFirstName()
+//			+ "\"," + "\"lastName\": \"" + message.getLastName() + "\"," + "\"contactNo\": \""
+//			+ message.getContactNo() + "\"," + "\"email\": \"" + message.getEmail() + "\"}";
+//			// attempt to decrypt the message
+//			String decryptedMessage = UKVisaEDService.decryptMessage(messageString);
+			
+			String decryptedMessage = UKVisaEDService.decryptMessage(encryptedMessage);
+			
 			// set response as the decrypted message
 			decryptResponse = decryptedMessage;		
 		} catch (Exception e) {
