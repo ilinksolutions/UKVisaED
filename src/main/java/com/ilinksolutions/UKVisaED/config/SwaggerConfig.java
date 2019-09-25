@@ -30,8 +30,8 @@ public class SwaggerConfig {
 	    private ApiInfo metaInfo() {
 
 	        ApiInfo apiInfo = new ApiInfo(
-	                "UK Visa Encrypt/Decrypt",
-	                "This service is used for testing the UK Visa Rest Encrypt/Decrypt APIs",
+	                "UK Visa Encrypt",
+	                "This service is used for testing the UK Visa Rest Encrypt API",
 	                "1.0",
 	                "Terms of Service",
 	                new Contact("I-Link Solutions, Inc.", "http://ilinksolution.com/",
