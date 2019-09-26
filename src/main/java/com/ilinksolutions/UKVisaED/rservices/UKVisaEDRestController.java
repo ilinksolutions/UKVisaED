@@ -18,7 +18,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@Api(value = "UK Visa ED Rest Test API", tags = { "UK Visa Encrypt Endpoint" })
+@Api(value = "UK Visa ED Rest Test API", tags = { "UK Visa Encrypt Endpoints" })
 public class UKVisaEDRestController {
 	
 	//private static final String COULD_NOT_DECRYPT_MESSAGE = "Could not decrypt message!";
@@ -26,30 +26,32 @@ public class UKVisaEDRestController {
 
 	Logger logger = LoggerFactory.getLogger(UKVisaEDRestController.class);
 
-//	@ApiOperation(value = "Returns decrypted message on success.")
-//	@ApiResponses(
-//			value={
-//					@ApiResponse(code = 200, message = "Successfully decrypted the message."),
-//			}
-//	)
-//	@PostMapping("/decryptmsg/{encryptedMessage}")
-//	public ResponseEntity<String> decryptMessage(@PathVariable String encryptedMessage)
-//	{
-//		logger.info("UKVisaEDRestController: decryptMessage: Begin!");
-//		
-//		String decryptResponse = null;
-//		try {
-//			
-//			String decryptedMessage = UKVisaEDService.decryptMessage(encryptedMessage);
-//			// set response as the decrypted message
-//			decryptResponse = decryptedMessage;
-//			
-//		} catch (Exception e) {
-//			throw new USCISException(COULD_NOT_DECRYPT_MESSAGE, ErrorCode.DECRYPT_ERROR_CODE);
-//		}
-//		// return response
-//		return ResponseEntity.ok(decryptResponse);
-//	}
+	/*
+	@ApiOperation(value = "Returns decrypted message on success.")
+	@ApiResponses(
+			value={
+					@ApiResponse(code = 200, message = "Successfully decrypted the message."),
+			}
+	)
+	@PostMapping("/decryptmsg/{encryptedMessage}")
+	public ResponseEntity<String> decryptMessage(@PathVariable String encryptedMessage)
+	{
+		logger.info("UKVisaEDRestController: decryptMessage: Begin!");
+		
+		String decryptResponse = null;
+		try {
+			
+			String decryptedMessage = UKVisaEDService.decryptMessage(encryptedMessage);
+			// set response as the decrypted message
+			decryptResponse = decryptedMessage;
+			
+		} catch (Exception e) {
+			throw new USCISException(COULD_NOT_DECRYPT_MESSAGE, ErrorCode.DECRYPT_ERROR_CODE);
+		}
+		// return response
+		return ResponseEntity.ok(decryptResponse);
+	}
+	*/
 	
 
 	@ApiOperation(value = "Returns encrypted message on success.")
