@@ -2,14 +2,9 @@ package com.ilinksolutions.UKVisaED.rservices;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ilinksolutions.UKVisaED.bservices.UKVisaEDService;
@@ -23,7 +18,6 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@RequestMapping("kafka")
 @Api(value = "UK Visa ED Rest Test API", tags = { "UK Visa Encrypt Endpoints" })
 public class UKVisaEDRestController {
 	
@@ -32,32 +26,6 @@ public class UKVisaEDRestController {
 
 	Logger logger = LoggerFactory.getLogger(UKVisaEDRestController.class);
 
-	
-	/****** BEGIN TESTING KAFKA ******/
-	
-	// testing Kafka
-	private static final String TOPIC = "UK_Visa_DB_Kafka";
-	
-	@Autowired
-	KafkaTemplate<String , String> kafkaTemplate;
-	
-	@GetMapping("/sendMsgFromProducer/{message}")
-	public String sendMessage(@PathVariable String message) {
-		
-		// send the message we specify in the end point to the TOPIC
-		kafkaTemplate.send(TOPIC, message);
-		return "We sent the message successfully!";
-	}
-	
-	/****** END TESTING KAFKA ******/
-	
-
-	@ApiOperation(value="Returns UK Visa ED Service is Running...")
-	@GetMapping("/serviceCheck")
-	public String serviceCheck() {
-		return "UK Visa ED Service is Running...";
-	}
-	
 	
 	/*
 	@ApiOperation(value = "Returns decrypted message on success.")
@@ -86,7 +54,6 @@ public class UKVisaEDRestController {
 	}
 	*/
 	
-
 	@ApiOperation(value = "Returns encrypted message on success.")
 	@ApiResponses(
 			value={
